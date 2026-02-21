@@ -1,5 +1,4 @@
-import React from "react";
-import { skillCategories, additionalSkills } from "../data";
+import { additionalSkills, skillCategories } from "../data";
 
 const badgeColors = [
   "bg-neo-yellow",
@@ -18,18 +17,24 @@ export default function Skills() {
     >
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
-          <span className="neo-badge bg-neo-orange mb-4 inline-block">Core Strengths</span>
+          <span className="neo-badge bg-neo-orange mb-4 inline-block">
+            Core Strengths
+          </span>
           <h2 className="font-heading text-4xl sm:text-5xl font-bold mt-4">
             Skills & Expertise
           </h2>
           <p className="text-gray-600 mt-4 text-lg max-w-2xl mx-auto">
-            Areas where I bring consistent value across projects and organisations
+            Areas where I bring consistent value across projects and
+            organisations
           </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-6 mb-12">
           {skillCategories.map((category) => (
-            <div key={category.title} className="neo-card p-6 flex flex-col gap-4">
+            <div
+              key={category.title}
+              className="neo-card p-6 flex flex-col gap-4"
+            >
               <span className={`neo-badge ${category.color} self-start`}>
                 {category.title}
               </span>
@@ -38,7 +43,10 @@ export default function Skills() {
               </p>
               <ul className="space-y-2 mt-1">
                 {category.skills.map((skill) => (
-                  <li key={skill} className="flex items-start gap-2 text-sm font-medium text-gray-800">
+                  <li
+                    key={skill}
+                    className="flex items-start gap-2 text-sm font-medium text-gray-800"
+                  >
                     <span className="mt-1 w-2 h-2 rounded-full border-2 border-neo-black bg-transparent shrink-0" />
                     {skill}
                   </li>
@@ -49,7 +57,9 @@ export default function Skills() {
         </div>
 
         <div className="text-center">
-          <h3 className="font-heading font-bold text-xl mb-6">Also experienced in</h3>
+          <h3 className="font-heading font-bold text-xl mb-6">
+            Also experienced in
+          </h3>
           <div className="flex flex-wrap justify-center gap-3">
             {additionalSkills.map((skill, index) => (
               <div
