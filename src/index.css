@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap");
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-body bg-neo-bg text-neo-black;
+  }
+
+  ::selection {
+    @apply bg-neo-yellow text-neo-black;
+  }
+}
+
+@layer components {
+  .neo-card {
+    @apply bg-white border-[3px] border-neo-black shadow-neo rounded-lg transition-all duration-200;
+  }
+
+  .neo-card:hover {
+    @apply shadow-neo-hover translate-x-[2px] translate-y-[2px];
+  }
+
+  .neo-btn {
+    @apply inline-flex items-center justify-center px-6 py-3 border-[3px] border-neo-black font-heading font-bold text-lg shadow-neo rounded-lg transition-all duration-150 cursor-pointer;
+  }
+
+  .neo-btn:hover {
+    @apply shadow-neo-hover translate-x-[2px] translate-y-[2px];
+  }
+
+  .neo-btn:active {
+    @apply shadow-none translate-x-[4px] translate-y-[4px];
+  }
+
+  .neo-badge {
+    @apply inline-block px-4 py-2 border-[2px] border-neo-black font-heading font-semibold text-sm shadow-neo rounded-md;
+  }
+
+  .neo-input {
+    @apply w-full px-4 py-3 border-[3px] border-neo-black rounded-lg font-body text-base bg-white shadow-neo focus:outline-none focus:shadow-neo-lg focus:-translate-x-[2px] focus:-translate-y-[2px] transition-all duration-150;
+  }
+
+  .marquee-track {
+    animation: marquee 20s linear infinite;
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .float-animation {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+}
